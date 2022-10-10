@@ -5,4 +5,6 @@ This game has been created following the tutorial from [Chris Course](https://ch
 
 ## How to play
 
-Download the files, and launch it using Live server from VSCode. 
+Download the files. Open the continaing folder in VSCode and use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to launch the game
+
+## Some Screenshots
