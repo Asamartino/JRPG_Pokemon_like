@@ -5,6 +5,8 @@ This game has been created following the tutorial from [Chris Course](https://ch
 
 ## How to play
 
-Download the files. Open the continaing folder in VSCode and use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to launch the game
+Download the files. Open the continaing folder in VSCode and use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to launch the game. Move the character using wasd keys. Walk on the dark green grass area in order to potential trigger a battle. 
+Once in battle click the different button to defeat your opponent.
 
-## Some Screenshots
+
+
