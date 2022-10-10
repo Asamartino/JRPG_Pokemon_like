@@ -1,0 +1,46 @@
+<head>
+  <title>Game</title>
+  <link rel="icon" type="image/x-icon" href="./Images/marble.png">
+  <link rel="stylesheet" href="./Styles/style.css">
+</head>
+
+<div style="display: inline-block; position: relative;">
+  <div id="overlappingDiv">
+  </div>
+
+  <canvas></canvas>
+  <div id="userInterface" style="display: none">
+        <!-- Health bar of Enemy -->
+        <div class="healthBar healthBar_top">
+          <h1>Karen</h1>
+          <div style="position: relative">
+            <div class="healthBar_grey"></div>
+            <div id="enemyHealthBar"></div>
+          </div>
+        </div>
+        <!-- Health bar of the player -->
+        <div  class="healthBar healthBar_down">
+          <h1>Flamby</h1>
+          <div style="position: relative">
+            <div class="healthBar_grey"></div>
+            <div id="playerHealthBar"></div>
+          </div>
+        </div>
+
+        <div class="attack_container">
+          <div id="dialogueBox"></div>
+          <div id="attacksBox">
+          </div>
+          <div id="attackTypeBox">
+            <h1 id="attackType">Attack Type</h1>
+          </div>
+        </div>
+
+  </div>
+</div>
+
+<script src="./Modules/gsap.min.js"></script>
+<script src="./Modules/howler.min.js"></script>
+<script  type="module" src="index.js"></script>
+
+
