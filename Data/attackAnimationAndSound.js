@@ -2,14 +2,10 @@ import audio from './audio.js';
 import Sprite from './classSprite.js';
 
 const initialisation = (monster) => {
-  let healthBar = '#enemyHealthbar';
-  let rotation = 1;
-  let movementDistance = 20;
-  if (monster.isEnemy) {
-    movementDistance = -20;
-    healthBar = '#playerHealthbar';
-    rotation = -2.2;
-  }
+  const healthBar = monster.isEnemy ? '#playerHealthbar': '#enemyHealthbar';
+  const movementDistance = monster.isEnemy ? -20 : 20;
+  const rotation = monster.isEnemy ? -2.2: 1;
+
   return { healthBar, rotation, movementDistance };
 };
 
