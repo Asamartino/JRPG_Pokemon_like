@@ -4,7 +4,7 @@ import Monster from './Data/classMonster.js';
 import audio from './Data/audio.js';
 import gameInitialization from './Data/gameInitialization.js';
 
-const {canvas, context, boundaries, offset, collisionsMap, battleZonesMap,battleZones, background, foreground, player, keys, battle, movables, battleBackground} = gameInitialization();
+const {context, boundaries, battleZones, background, foreground, player, keys, battle, movables, battleBackground} = gameInitialization();
 let karen;
 let flamby;
 let renderedSprites;

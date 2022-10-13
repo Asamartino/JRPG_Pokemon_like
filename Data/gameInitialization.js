@@ -94,7 +94,7 @@ const gameInitialization = () => {
     image: battleBackgroundImage,
   });
 
-  return{canvas, context,boundaries, offset, collisionsMap, battleZonesMap,battleZones, background, foreground, player, keys, battle, movables, battleBackground}
+  return{context,boundaries,battleZones, background, foreground, player, keys, battle, movables, battleBackground}
 
 }
 
