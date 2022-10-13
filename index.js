@@ -1,105 +1,16 @@
 import attacks from './Data/attacks.js';
 import monsters from './Data/monsters.js';
-import Boundary from './Data/classBoundary.js';
-import Sprite from './Data/classSprite.js';
 import Monster from './Data/classMonster.js';
 import audio from './Data/audio.js';
-import createPlayer from './Data/createPlayer.js';
-import createBackground from './Data/createBackground.js';
-import createForeground from './Data/createForeground.js';
-import collisions from './Data/collisions.js';
-import battleZonesData from './Data/battleZones.js';
+import gameInitialization from './Data/gameInitialization.js';
 
-const canvas = document.querySelector('canvas');
-const context = canvas.getContext('2d');
-canvas.width = 1024;
-canvas.height = 576;
-const boundaries = [];
-const offset = {
-  x: -810,
-  y: -590,
-};
-
-const collisionsMap = [];
-for (let i = 0; i < collisions.length; i += 70) {
-  collisionsMap.push(collisions.slice(i, 70 + i));
-}
-const battleZonesMap = [];
-for (let i = 0; i < battleZonesData.length; i += 70) {
-  battleZonesMap.push(battleZonesData.slice(i, 70 + i));
-}
-collisionsMap.forEach((row, i) => {
-  row.forEach((symbol, j) => {
-    if (symbol === 1025)
-      boundaries.push(
-        new Boundary({
-          position: {
-            x: j * Boundary.width + offset.x,
-            y: i * Boundary.height + offset.y,
-          },
-        })
-      );
-  });
-});
-
-const battleZones = [];
-let battleAnimationId;
-
-battleZonesMap.forEach((row, i) => {
-  row.forEach((symbol, j) => {
-    if (symbol === 1025)
-      battleZones.push(
-        new Boundary({
-          position: {
-            x: j * Boundary.width + offset.x,
-            y: i * Boundary.height + offset.y,
-          },
-        })
-      );
-  });
-});
-
-const background = createBackground(offset);
-const foreground = createForeground(offset);
-const player = createPlayer(canvas);
-
-const keys = {
-  w: {
-    pressed: false,
-  },
-  a: {
-    pressed: false,
-  },
-  s: {
-    pressed: false,
-  },
-  d: {
-    pressed: false,
-  },
-};
-
-const battle = {
-  initiated: false,
-};
-
-let moving;
-
-const movables = [background, ...boundaries, foreground, ...battleZones];
-
-const battleBackgroundImage = new Image();
-battleBackgroundImage.src = './Images/battleBackground.png';
-const battleBackground = new Sprite({
-  position: {
-    x: 0,
-    y: 0,
-  },
-  image: battleBackgroundImage,
-});
-
+const {canvas, context, boundaries, offset, collisionsMap, battleZonesMap,battleZones, background, foreground, player, keys, battle, movables, battleBackground} = gameInitialization();
 let karen;
 let flamby;
 let renderedSprites;
 let queue = [];
+let moving;
+let battleAnimationId;
 
 /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// /////               to start audio only the 1st time the game is loaded                               /////
@@ -242,8 +153,8 @@ const animate = () => {
           rectangle2: battleZone,
         }) &&
         overlappingArea > (player.width * player.height) / 2 &&
-        ///////////////////////////////////////////////////>////////////////////////////////////////////
-        Math.random() < 0.1  //////         value to modify to trigger battle                   //////
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        Math.random() < 0.05  //////         value to modify to trigger battle                   //////
         ////////////////////////////////////////////////////////////////////////////////////////////////
       ) {
         window.cancelAnimationFrame(animationId);
