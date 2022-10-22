@@ -1,6 +1,6 @@
 # JRPG
 
-This game has been created following the tutorial by [Chris Course](https://chriscourses.com/courses/pokemon/videos/introduction) (see this [repo](https://github.com/chriscourses/pokemon-style-game). Minor bugs have been corrected as well as general improvements of the code.
+This game has been created following the tutorial by [Chris Course](https://chriscourses.com/courses/pokemon/videos/introduction) (see this [repo](https://github.com/chriscourses/pokemon-style-game)). Minor bugs have been corrected as well as general improvements of the code.
 
 
 ## How to play
